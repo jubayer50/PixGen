@@ -1,6 +1,7 @@
 import { Button, Card, Chip } from "@heroui/react";
 import { Heart, ArrowDownToLine } from "@gravity-ui/icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const PhotoCard = ({ photo }) => {
   return (
@@ -40,9 +41,12 @@ const PhotoCard = ({ photo }) => {
           </div>
         </Card.Header>
         <Card.Footer>
-          <Button variant="outline" className={"w-full"}>
-            View Details
-          </Button>
+          <Link href={`/photo-detail/${photo.id}`} className="w-full">
+            {" "}
+            <Button variant="outline" className={"w-full"}>
+              View Details
+            </Button>
+          </Link>
         </Card.Footer>
       </Card>
     </div>
